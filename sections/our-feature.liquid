@@ -1,0 +1,114 @@
+<!--Start: Our Features -->
+<section id="our_features">
+  <h1 class="animate__animated animate__slideInUp" >{{ section.settings.title }}</h1>
+  <div class="container">
+    <div class="row">
+      <div class="features_body">
+        <div class="col-12 col-lg-6">
+          <div class="about_content animate__animated animate__slideInLeft">
+            <div class="about_inner">
+              <div class="inner_icon"><img src="{{ section.settings.icon | image_url }}"></div>
+              <div class="inner_content">
+                <h3>{{ section.settings.title_1 }}</h3>
+                <p>{{ section.settings.sub-heading_1 }}</p>
+              </div>
+            </div>
+            <div class="about_inner">
+              <div class="inner_icon"><img src="{{ section.settings.icon_1 | image_url }}"></div>
+              <div class="inner_content">
+                <h3>{{ section.settings.title_2 }}.</h3>
+                <p>{{ section.settings.sub-heading_2 }}</p>
+              </div>
+            </div>
+            <div class="about_inner">
+              <div class="inner_icon"><img src="{{ section.settings.icon_2 | img_url }}"></div>
+              <div class="inner_content">
+                <h3>{{ section.settings.title_3 }}</h3>
+                <p>{{ section.settings.sub-heading_3 }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="about_pic animate__animated animate__slideInRight">
+            <img src="{{ section.settings.image | image_url }}"> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--End: Our Features --> 
+
+
+
+
+{% schema %}
+  {
+    "name": "Our Feature",
+    "settings": [
+       {
+         "type": "image_picker",
+         "id": "image",
+         "label": "Image"
+       },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon",
+        "label": "Select Icon"
+      },
+      {
+        "type": "text",
+        "id": "title_1",
+        "label": "Heding"
+      },
+      {
+        "type": "text",
+        "id": "sub-heading_1",
+        "label": "Sub Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon_1",
+        "label": "Select Icon"
+      },
+      {
+        "type": "text",
+        "id": "title_2",
+        "label": "Heding"
+      },
+      {
+        "type": "text",
+        "id": "sub-heading_2",
+        "label": "Sub Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon_2",
+        "label": "Select Icon"
+      },
+      {
+        "type": "text",
+        "id": "title_3",
+        "label": "Heding"
+      },
+      {
+        "type": "text",
+        "id": "sub-heading_3",
+        "label": "Sub Heading"
+      }
+      
+    ],
+    "presets": [
+    {
+      "name": "Our Feature"
+    }
+  ]
+  }
+{% endschema %}
+

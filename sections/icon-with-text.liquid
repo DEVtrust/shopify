@@ -1,0 +1,99 @@
+<section id="sec_process">
+  <div class="container">
+    <div class="row">
+      <div class="process_body">
+        <div class="col-12 col-sm-6 col-lg-3 ">
+          <div class="process_block first_block">
+            <div class="line_arrow"><img src="{{ section.settings.arrow_img | image_url }}"></div>
+            <img src="{{ section.settings.icon_img | image_url }}">
+            <h5>{{ section.settings.title }}</h5>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 ">
+          <div class="process_block"> <img src="{{ section.settings.icon_img2 | image_url }}">
+            <div class="bottom_arrow_line"><img src="{{ section.settings.bottom_arrow_img | image_url }}"></div>
+            <h5>{{ section.settings.title1 }}</h5>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 ">
+          <div class="process_block">
+            <div class="line_arrow_two"><img src="{{ section.settings.arrow_img | image_url }}"></div>
+            <img src="{{ section.settings.icon_img3 | image_url }}">
+            <h5>{{ section.settings.title2 }}</h5>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 ">
+          <div class="process_block"> <img src="{{ section.settings.icon_img4 | image_url }}">
+            <h5>{{ section.settings.title3 }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+ {
+   "name": "Icon with Text",
+   "settings": [
+      {
+         "type": "image_picker",
+         "id": "icon_img",
+         "label": "Upload Logo"
+      },
+     {
+         "type": "image_picker",
+         "id": "arrow_img",
+         "label": "Upload image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Text"
+      },
+       {
+         "type": "image_picker",
+         "id": "icon_img2",
+         "label": "Upload Logo"
+      },
+     
+     {
+       "type": "image_picker",
+         "id": "bottom_arrow_img",
+         "label": "Upload image"
+     },
+      {
+        "type": "text",
+        "id": "title1",
+        "label": "Text"
+      },
+    {
+         "type": "image_picker",
+         "id": "icon_img3",
+         "label": "Upload Logo"
+      },
+      {
+        "type": "text",
+        "id": "title2",
+        "label": "Text"
+      },
+       {
+         "type": "image_picker",
+         "id": "icon_img4",
+         "label": "Upload Logo"
+      },
+      {
+        "type": "text",
+        "id": "title3",
+        "label": "Text"
+      }
+   ],
+   "presets": [
+    {
+      "name": "Icon with text"
+    }
+  ]
+}
+{% endschema %}
+

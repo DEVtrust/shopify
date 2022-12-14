@@ -1,0 +1,202 @@
+{%- style -%}
+  .pricing_card_body {
+    background-color: #fdeeef;
+    height: 100%;
+    box-shadow: 0 0 30px 1px #0000004d;
+    border-radius: 10px;
+    overflow: hidden;
+    border-top: 0;
+    transition: all .3s linear;
+    z-index: 1;
+    position: relative;
+}
+  .pricing_card_body:hover{
+    transform: scale(1.03) translate(2px) translateY(2px);
+    z-index: 5;
+  }
+  .pricing_card_body h3 {
+    font-size: 22px;
+    border-bottom: 1px solid #eb5757;
+    padding: 10px 20px;
+    background-color: #eb5757d4;
+    color: #fff;
+    text-shadow: 0px 2px 2px rgb(0 0 0 / 24%);
+}
+
+  .pricing_card_body h3.act{
+        background:  #eb5757;
+  }
+  .pricing_card_body .pricing p {
+    margin: 10px 0;
+    font-size: 15px;
+    text-shadow: 0px 2px 2px rgb(0 0 0 / 5%);
+}
+  .pricing_card_body .pricing{
+    text-align: center;    
+    padding-bottom: 15px;
+  }
+.pricing_card_body .pricing h3 {
+    line-height: 28px;
+    border: none;
+    background-color: #eb5757;
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 18px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 400;
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+  border: 1px solid #eb5757;
+  cursor: pointer;
+}
+  .pricing_card_body .pricing h3:hover{
+    background-color: transparent;
+    color: #C63535!important;
+  }
+        .pricing_section h1{
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 40px;
+            line-height: 54px;
+            color: #18191f;
+            position: relative;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 50px;
+            width: max-content;
+        }
+
+        .pricing_section h1::before{
+            content: "";
+            display: block;
+            width: 100px;
+            height: 5px;
+            background: #eb5757;
+            left: -105px;
+            top: 50%;
+            position: absolute;
+        }
+        .pricing_section h1::after{
+            content: "";
+            display: block;
+            width: 100px;
+            height: 5px;
+            background: #eb5757;
+            right: -105px;
+            top: 50%;
+            position: absolute;
+        }
+  .pricing_card_body ul.rte li {
+    display: flex;
+    column-gap: 15px;
+    margin-bottom: 10px;
+    align-items: center;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    font-feature-settings: "salt"on,"liga"off;
+    color: #18191f;
+    margin-top: 20px;
+}
+
+.pricing_card_body ul.rte li img {
+       max-width: 32px !important;
+}
+
+.pricing_card_body ul.rte {
+   margin: 15px 0;
+    padding: 20px;
+    margin-top: 0;
+}
+  @media only screen and (max-width: 767px){
+  .pricing_section h1{
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .pricing_section h1::after, .pricing_section h1::before{
+      display: none;
+  }
+  .pricing_card_body h3 {
+    font-size: 24px;
+  }
+    .pricing_card_body{
+      height: auto;
+      margin-bottom: 15px;
+    }
+}
+{%- endstyle -%}
+<section class="shopify-section section pricing_section">
+        <div class="multicolumn color-background-1 gradient background-primary">
+            <div class="container">
+                <h1 class="animate__animated animate__slideInUp" data-aos="fade-up" data-aos-delay="100"> Multiple Editions To Choose</h1>
+                <div class="row justify-content-center">
+                    <div class="col-sm-4">
+                        <div class="pricing_card_body">
+                            <div class="multicolumn-card__info">
+                                <h3 data-aos="fade-up" data-aos-delay="100">Personal Edition</h3>
+                                <ul class="rte">
+                                    <li data-aos="fade-up" data-aos-delay="100"><img class="img-fluid" src=" {{ 'approve-checked-simple.gif' | asset_url }}" /> One Owner/User</li>
+                                    <li data-aos="fade-up" data-aos-delay="100"><img class="img-fluid" src=" {{ 'approve-checked-simple.gif' | asset_url }}" /> Request prayer requests from up to 10 friend/family members</li>
+                                    <li data-aos="fade-up" data-aos-delay="100"><img class="img-fluid" src=" {{ 'approve-checked-simple.gif' | asset_url }}" /> User receives link to review requests</li>
+                                    <li data-aos="fade-up" data-aos-delay="100"><img class="img-fluid" src=" {{ 'approve-checked-simple.gif' | asset_url }}" /> User receive prayer reminders every Mon, Wed, Fri</li>
+                                    <li data-aos="fade-up" data-aos-delay="100"><img class="img-fluid" src=" {{ 'approve-checked-simple.gif' | asset_url }}" /> Automatically request updates</li>
+                                    <li data-aos="fade-up" data-aos-delay="100"><img class="img-fluid" src=" {{ 'approve-checked-simple.gif' | asset_url }}" /> OTHER TBD</li>
+                                </ul>
+                                <div class="pricing" data-aos="fade-up" data-aos-delay="100">
+                                    <h3>$12 annually</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="pricing_card_body">
+                            <div class="multicolumn-card__info">
+                                <h3 class="act" data-aos="fade-up" data-aos-delay="100">Group Edition</h3>
+                                <ul class="rte">
+                                    <li data-aos="fade-up" data-aos-delay="100"><img class="img-fluid" src=" {{ 'approve-checked-simple.gif' | asset_url }}" /> One Group Owner</li>
+                                  <li data-aos="fade-up" data-aos-delay="100"><img class="img-fluid" src=" {{ 'approve-checked-simple.gif' | asset_url }}" /> Up to 10 participants</li>
+                                    <li data-aos="fade-up" data-aos-delay="100"><img class="img-fluid" src=" {{ 'approve-checked-simple.gif' | asset_url }}" />Entire group able to view all prayer requests</li>
+                                    <li data-aos="fade-up" data-aos-delay="100"><img class="img-fluid" src=" {{ 'approve-checked-simple.gif' | asset_url }}" /> All participants receive prayer reminders every Mon, Wed, Fri</li>
+                                    <li data-aos="fade-up" data-aos-delay="100"><img class="img-fluid" src=" {{ 'approve-checked-simple.gif' | asset_url }}" /> Automatically request updates</li>
+                                    <li data-aos="fade-up" data-aos-delay="100"><img class="img-fluid" src=" {{ 'approve-checked-simple.gif' | asset_url }}" /> OTHER TBD</li>
+                                </ul>
+                                <div class="pricing" data-aos="fade-up" data-aos-delay="100">
+                                    <h3>$100 annually for 10 people </h3>
+                                  <p>($10 per participant annually)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% schema %}
+  {
+    "name": "Editions To Choose",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Editions To Choose"       
+      }
+    ]
+  }
+{% endschema %}
+{% javascript %}
+  (function() {
+  "use strict";
+   window.addEventListener('load', () => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    })
+  });
+
+  })()
+{% endjavascript %}

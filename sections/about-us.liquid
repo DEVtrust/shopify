@@ -1,0 +1,94 @@
+<!--Start: About Us -->
+<section id="sec_about">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="about_pic animate__animated animate__slideInLeft"> <img src="{{ section.settings.image | image_url}}"> </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="about_content animate__animated animate__slideInRight">
+          <h1>{{ section.settings.title }}</h1>
+          <p>{{ section.settings.sub-heading }}</p>
+          <div class="about_inner">
+            <div class="inner_icon"><img src="{{ section.settings.icon | image_url}}"></div>
+            <div class="inner_content">
+              <h3>{{ section.settings.title_1 }}</h3>
+              <p>{{ section.settings.sub-heading_1 }}</p>
+            </div>
+          </div>
+          <div class="about_inner">
+            <div class="inner_icon"><img src="{{ section.settings.icon_1 | image_url}}"></div>
+            <div class="inner_content">
+              <h3>{{ section.settings.title_2 }}</h3>
+              <p>{{ section.settings.sub-heading_2 }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--End: About Us --> 
+
+
+
+{% schema %}
+  {
+    "name": "About us",
+    "settings": [
+       {
+         "type": "image_picker",
+         "id": "image",
+         "label": "Image"
+       },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "sub-heading",
+        "label": "Sub Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon",
+        "label": "Select Icon"
+      },
+      {
+        "type": "text",
+        "id": "title_1",
+        "label": "Heding"
+      },
+      {
+        "type": "text",
+        "id": "sub-heading_1",
+        "label": "Sub Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon_1",
+        "label": "Select Icon"
+      },
+      {
+        "type": "text",
+        "id": "title_2",
+        "label": "Heding"
+      },
+      {
+        "type": "text",
+        "id": "sub-heading_2",
+        "label": "Sub Heading"
+      }
+      
+    ],
+    "presets": [
+    {
+      "name": "About us"
+    }
+  ]
+  }
+{% endschema %}
+

@@ -1,0 +1,47 @@
+<!--Start: Footer -->
+<section id="footer">
+  <p>{{ section.settings.footer_text }}</p>
+  <div class="ft_icons">
+    <img src="{{ section.settings.instagrame | image_url }}"> 
+    <img src="{{ section.settings.linkin | image_url }}"> 
+    <img src="{{ section.settings.twitter | image_url }}"> 
+  </div>
+</section>
+
+<!--End: Footer --> 
+
+
+
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "footer_text",
+        "label": "Enter Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "instagrame",
+        "label": "Select icon"
+      },
+      {
+        "type": "image_picker",
+        "id": "linkin",
+        "label": "Select icon"
+      },
+      {
+        "type": "image_picker",
+        "id": "twitter",
+        "label": "Select icon"
+      }
+    ],
+   "presets": [
+    {
+      "name": "Custom Footer"
+    }
+  ]
+  }
+{% endschema %}

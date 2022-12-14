@@ -1,0 +1,236 @@
+<!--Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--Fonts --> 
+
+<link rel="stylesheet" href="{{ 'bootstrap.min.css' | asset_url }}" >
+      <link rel="stylesheet" href="{{ 'common.css' | asset_url }}" >
+      <link rel="stylesheet" href="{{ 'style.css' | asset_url }}" >
+      <link rel="stylesheet" href="{{ 'responsive.css' | asset_url }}" >
+      <link rel="stylesheet" href="{{ 'style-header.css' | asset_url }}" >
+      <link rel="stylesheet" href="{{ 'owl.carousel.css' | asset_url }}" >
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.min.css"/>
+
+
+<link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
+{%- if settings.predictive_search_enabled -%}
+  <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="{{ 'component-loading-overlay.css' | asset_url }}" media="print" onload="this.media='all'">
+{%- endif -%}
+{%- if section.settings.menu_type_desktop == 'mega' -%}
+  <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript>{{ 'component-mega-menu.css' | asset_url | stylesheet_tag }}</noscript>
+{%- endif -%}
+
+  {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+  {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+  {{ 'component-totals.css' | asset_url | stylesheet_tag }}
+  {{ 'component-price.css' | asset_url | stylesheet_tag }}
+  {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+  {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+}
+
+<noscript>{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-search.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-menu-drawer.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
+
+<style>
+  header-drawer {
+    justify-self: start;
+    margin-left: -1.2rem;
+  }
+
+  .header__heading-logo {
+    max-width: {{ section.settings.logo_width }}px;
+  }
+
+  @media screen and (min-width: 990px) {
+    header-drawer {
+      display: none;
+    }
+  }
+
+  .menu-drawer-container {
+    display: flex;
+  }
+
+  .list-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .list-menu--inline {
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+
+  summary.list-menu__item {
+    padding-right: 2.7rem;
+  }
+
+  .list-menu__item {
+    display: flex;
+    align-items: center;
+    line-height: calc(1 + 0.3 / var(--font-body-scale));
+  }
+
+  .list-menu__item--link {
+    text-decoration: none;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    line-height: calc(1 + 0.8 / var(--font-body-scale));
+  }
+
+  @media screen and (min-width: 750px) {
+    .list-menu__item--link {
+      padding-bottom: 0.5rem;
+      padding-top: 0.5rem;
+    }
+  }
+</style>
+
+{%- style -%}
+  .header {
+    padding-top: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px;
+  }
+
+  .section-header {
+    margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-header {
+      margin-bottom: {{ section.settings.margin_bottom }}px;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .header {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
+{%- if settings.cart_type == "drawer" -%}
+  <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+<svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+  <symbol id="icon-search" viewbox="0 0 18 19" fill="none">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.03 11.68A5.784 5.784 0 112.85 3.5a5.784 5.784 0 018.18 8.18zm.26 1.12a6.78 6.78 0 11.72-.7l5.4 5.4a.5.5 0 11-.71.7l-5.41-5.4z" fill="currentColor"/>
+  </symbol>
+
+  <symbol id="icon-close" class="icon icon-close" fill="none" viewBox="0 0 18 17">
+    <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor">
+  </symbol>
+</svg>
+
+
+
+
+<!--Start: Header -->
+<header> 
+<!--Start: Main Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top" id="header">
+   <div class="container" style="max-width:1330px;">
+      <a class="d-lg-none" href="{{ shop.url }}"> <img src="{{ section.settings.image | image_url }}" class="logo" alt="Logo" /> </a>
+      <ul class="mb-left-nav d-flex align-items-center d-lg-none">
+           <li class="nav-item">
+            <div class="search-icon">
+               <a data-bs-toggle="collapse" href="#mbsearch" role="button" aria-expanded="false" aria-controls="search">
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M22.75 22.75L16.25 16.25M18.4167 10.8333C18.4167 15.0215 15.0215 18.4167 10.8333 18.4167C6.64517 18.4167 3.25 15.0215 3.25 10.8333C3.25 6.64517 6.64517 3.25 10.8333 3.25C15.0215 3.25 18.4167 6.64517 18.4167 10.8333Z" stroke="#25394F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+               </a>
+            </div>
+         </li>
+            <li class="nav-item">
+               <a href="{{ section.settings.btn_url }}"><button type="submit" class="btn btn-primary header_login_btn">{{ section.settings.btn_text }}</button></a>
+            </li>
+      </ul>
+      <button data-toggle="collapse"class="navbar-toggle navbar-toggler navbar-toggler-right collapsed" id="toggleBtn" type="button" data-bs-toggle="collapse" data-target="#navbarCollapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"> <span class="close">
+      <svg width="22" height="22" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.0235 20L32.2774 7.77734C32.4493 7.57422 32.3048 7.26562 32.0391 7.26562H28.9219C28.7384 7.26562 28.5626 7.34766 28.4415 7.48828L19.9844 17.5703L11.5274 7.48828C11.4102 7.34766 11.2344 7.26562 11.0469 7.26562H7.92976C7.66413 7.26562 7.5196 7.57422 7.69148 7.77734L17.9454 20L7.69148 32.2227C7.65297 32.2679 7.62827 32.3233 7.62031 32.3822C7.61234 32.4411 7.62144 32.501 7.64653 32.5549C7.67162 32.6088 7.71164 32.6543 7.76184 32.6862C7.81205 32.718 7.87032 32.7347 7.92976 32.7344H11.0469C11.2305 32.7344 11.4063 32.6523 11.5274 32.5117L19.9844 22.4297L28.4415 32.5117C28.5587 32.6523 28.7344 32.7344 28.9219 32.7344H32.0391C32.3048 32.7344 32.4493 32.4258 32.2774 32.2227L22.0235 20Z" fill="#F72585"/>
+      </svg>
+      </span> <span class="navbar-toggler-icon"></span> </button>
+      <a class="d-none d-lg-block" href="{{ shop.url }}"> <img src="{{ section.settings.image  | image_url  }}" class="logo" alt="Logo" /> </a>
+      <div class="collapse navbar-collapse nav_body w-100" id="navbarCollapse">
+         <ul class="nav navbar-nav">
+           <li class="nav-item dropdown z-index-9">
+             <a href="{{ shop.url }}">
+               <img src="{{ section.settings.home-icon | image_url }}" style="margin-top:5px;"/></a></li>
+            {%  for link in section.settings.header_menu.links %}
+              {% if link.links != blank %}
+              Dropdown Menu
+              {% else %}
+              <li class="nav-item z-index-9">
+                <a class="nav-link {% if link.current %}active {% endif %}" data-bs-toggle="dropdown" href="{{ link.url }}">
+                  <span>{{ link.title }}</span>
+                </a>
+              </li>
+              {% endif %}
+            {% endfor %}
+         </ul>
+      </div>
+      <div class="collapse navbar-collapse  d-none d-lg-block navbar-search">
+         <ul class="navbar-nav justify-content-end">
+            <li class="nav-item">
+               <a href="{{ section.settings.btn_url }}">
+                 <button type="submit" class="btn btn-primary header_login_btn">{{ section.settings.btn_text }}</button>
+               </a>
+            </li>
+         </ul>
+      </div>
+   </div>
+</nav>
+<!--End: Main Navigation --> 
+</header>
+<!--End: Header -->
+{% schema %}
+  {
+   "name": "Header",
+   "settings": [
+      {
+         "type": "image_picker",
+         "id": "image",
+         "label": "Upload Logo"
+      },
+      {
+         "type": "image_picker",
+         "id": "home-icon",
+         "label": "Home Icon"
+      },
+      {
+         "type": "link_list",
+         "id": "header_menu",
+         "label": "Header Menu",
+         "default": "main-menu"
+      },
+      {
+         "type": "text",
+         "id": "btn_text",
+         "label": "Button"
+      },
+      {
+         "type": "url",
+         "id": "btn_url",
+         "label": "Button Link"
+      }
+   ]
+}
+{% endschema %}
